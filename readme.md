@@ -31,12 +31,20 @@ Now unplug and plug in your JTAG adapter.
 
 ## Usage
 
-`cd` into the `openocd` directory. Use the `program_fpga.sh`. The working directory must be `openocd`.
+`cd` into the `openocd` directory. Use the `program_fpga.sh`. The working directory must be `openocd`. Depending on your FPGA hardware (no-ethernet vs ethernet)
 
 ```
-./program_fpga.sh
+./program_fpga.sh FPGA1394QLA.bit
 
 ```
+
+or
+
+```
+./program_fpga.sh FPGA1394EthQLA.bit
+```
+
+This temporarily programs the FPGA with v7 firmware. Now, without powering off the FPGA, reprogram the PROM using firewire.
 
 ## License
 The bitstream included in the distribution `bscan_spi_xc6slx45.bit` is built from the following source under GPLv2.
